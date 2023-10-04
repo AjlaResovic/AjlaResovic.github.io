@@ -75,53 +75,54 @@ document.addEventListener("DOMContentLoaded", function () {
     translatePage(languageSelect.value);
   });
   
-  const registrationForm = document.querySelector("form");
-  registrationForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const fullNameInput = document.getElementById("ime_prezime");
-    const usernameInput = document.getElementById("korisnicko_ime");
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("lozinka");
-    const confirmPasswordInput = document.getElementById("ponovi_lozinku");
-  
-    if (
-      fullNameInput.value.trim() === "" ||
-      usernameInput.value.trim() === "" ||
-      emailInput.value.trim() === "" ||
-      passwordInput.value.trim() === "" ||
-      confirmPasswordInput.value.trim() === ""
-    ) {
-      alert("Molimo vas da popunite sva polja.");
-      return;
-    }
-  
-    if (passwordInput.value !== confirmPasswordInput.value) {
-      alert("Lozinke se ne podudaraju.");
-      return;
-    }
-  
-    if (!validateEmail(emailInput.value)) {
-      alert("Unesite validnu email adresu.");
-      return;
-    }
-  
-    alert("Registracija uspešna!");
-  });
-  
-  const passwordInput = document.getElementById("lozinka");
-  const togglePasswordButton = document.getElementById("togglePassword");
-  
-  togglePasswordButton.addEventListener("click", function () {
-    if (passwordInput.type === "password") {
-      passwordInput.type = "text";
-    } else {
-      passwordInput.type = "password";
-    }
-  });
-  
-  function validateEmail(email) {
-    const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return re.test(email);
-  }
-  
-  translatePage(languageSelect.value);
+const registrationForm = document.querySelector("form");
+        registrationForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const fullNameInput = document.getElementById("ime_prezime");
+            const usernameInput = document.getElementById("korisnicko_ime");
+            const emailInput = document.getElementById("email");
+            const passwordInput = document.getElementById("lozinka");
+            const confirmPasswordInput = document.getElementById("ponovi_lozinku");
+
+            if (
+                fullNameInput.value.trim() === "" ||
+                usernameInput.value.trim() === "" ||
+                emailInput.value.trim() === "" ||
+                passwordInput.value.trim() === "" ||
+                confirmPasswordInput.value.trim() === ""
+            ) {
+                alert("Molimo vas da popunite sva polja.");
+                return;
+            }
+
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                alert("Lozinke se ne podudaraju.");
+                return;
+            }
+
+            if (!validateEmail(emailInput.value)) {
+                alert("Unesite validnu email adresu.");
+                return;
+            }
+
+            // Izdvojite ime i prezime koristeći znak '-' kao separator
+            const [ime, prezime] = fullNameInput.value.trim().split('-');
+
+            alert("Registracija uspešna! Ime: " + ime + ", Prezime: " + prezime);
+        });
+
+        const passwordInput = document.getElementById("lozinka");
+        const togglePasswordButton = document.getElementById("togglePassword");
+
+        togglePasswordButton.addEventListener("click", function () {
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return re.test(email);
+        }
