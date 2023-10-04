@@ -105,22 +105,12 @@ const registrationForm = document.querySelector("form");
                 return;
             }
 
-            // Izdvojite ime i prezime koristeći znak '-' kao separator
             const [ime, prezime] = fullNameInput.value.trim().split('-');
 
             alert("Registracija uspešna! Ime: " + ime + ", Prezime: " + prezime);
         });
 
-        const passwordInput = document.getElementById("lozinka");
-        const togglePasswordButton = document.getElementById("togglePassword");
-
-        togglePasswordButton.addEventListener("click", function () {
-            if (passwordInput.type === "password") {
-                passwordInput.type = "text";
-            } else {
-                passwordInput.type = "password";
-            }
-        });
+       
 
         function validateEmail(email) {
             const re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
