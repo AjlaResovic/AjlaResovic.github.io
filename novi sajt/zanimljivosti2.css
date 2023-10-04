@@ -1,0 +1,393 @@
+body,p, h2,a {
+    margin: 0;
+    padding: 0;
+    background-image:('C:\Users\Computer\Desktop\novi sajt\slika.jpg');
+    background-color: #352e41;
+    color: #f1eac3;
+    
+}
+
+body {
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+
+#title{
+    text-align: center;
+}
+
+
+#en{
+    background-color: #04070d;
+    color: white;
+}
+#sr{
+    background-color:blue ;
+    color: red;
+}
+.jezik{
+
+    margin-left: 0px;
+    color: #04070d;
+    text-align: center;
+    background-color: #04070d;
+    border: none;
+    padding: 3px 3px; 
+    border-radius: 5px;
+    cursor: pointer;
+    }
+.logo img {
+    top: 20px;
+    float: left;
+    width: 130px;
+    height: 120px;
+    max-width: 100%
+}
+
+.logo h1 {
+    color: #fcfced; /* Boja teksta */
+    
+    position: relative;
+    top: 20px;
+    left: -25px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+}
+
+
+/* Postavljanje fonta i boje teksta */
+body {
+    font-family: Arial, sans-serif;
+    color: #fcfced; /* Boja teksta */
+          
+}
+
+/* Stilizacija zaglavlja */
+header {
+    background-color:#352e41;
+    color: #f1eac3;
+    text-align: left;
+    padding: -5px;
+}
+
+
+/* Stilizacija naslova */
+h1 {
+    font-size: 36px;
+    margin-bottom: 0cm;
+    margin-left: 3cm;
+font-style: italic;
+    
+}   
+
+/* Stilizacija glavnog menija */
+nav ul {
+
+    margin-right: 20px;
+    margin-left: 20px;
+    list-style: none;
+    background-color: #04070d;
+    text-align: center;
+    padding: 18px;
+    /* word-spacing: 30px; */
+    
+    
+}
+.menulist{
+    word-spacing: 20px;
+    letter-spacing: 2px;
+    color: #fcfced; /* Boja teksta */
+    
+    
+}
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fcfced; /* Boja teksta */
+    
+    font-weight: bolder;
+    text-decoration-line: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    
+    border: 6px solid #352e41;
+    ; /* Debljina i boja ivica kutije */
+    border-radius: 20px; /* Zaobljeni ivici kutije */
+    margin: 5px; /* Razmak između reči u meniju */
+    word-spacing: 2px;
+}
+
+/* Stilizacija sekcija */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+
+/* Stilizacija podnožja */
+footer {
+    background-color: #04070d;
+    color: #fcfced; /* Boja teksta */
+    text-align: center;
+    padding: 10px;
+}
+
+/* Stilizacija linkova */
+a:hover {
+    text-decoration: none;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+        color: #fcfced; /* Boja teksta */
+    
+    font-weight: bolder;
+    text-decoration-line: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    
+
+    ; /* Debljina i boja ivica kutije */
+    border-radius: 20px; /* Zaobljeni ivici kutije */
+    margin: 5px; /* Razmak između reči u meniju */
+    word-spacing: 2px;
+}
+
+/* Style for the dropdown button */
+.dropdown button {
+
+    
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #04070d;
+    min-width: 160px;
+    z-index: 1;
+}
+
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #04070d;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+} 
+/* Stilizacija kontejnera */
+.login {
+    text-align: right;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    position: relative;
+    margin-bottom: 8px;    
+    text-align: align;
+}
+
+/* Stilizacija linkova */
+.login a { text-decoration: none;
+    color: #fcfced; /* Boja teksta */
+    
+       top: 20px;
+       margin-top: 20px;
+       
+
+    }
+
+
+/* Stil za paragraf (tekst) */
+p{
+       
+    font-weight: bold; /* Debljina fonta */
+    margin-right: 20px; /* Razmak sa desne strane slike */
+    flex: 1; /* Tekst će zauzeti polovinu dostupnog prostora */
+    padding: 20px;
+    text-align: justify;
+    font-size: 12pt;
+    line-height: 1.5; /* Razmak između redova */
+    margin-bottom: 10px; /* Razmak ispod svakog pasusa */
+    color: #fcfced; /* Boja teksta */
+
+}
+
+
+.containermars{
+
+    display: flex; /* Postavljanje na fleksibilni kontejner */
+
+    align-items: center;
+    
+}
+
+
+
+.imagemars img{
+    
+    text-align: left;
+    padding-left: -50px;
+  
+}
+.textmars {
+    text-align: right;
+    flex: 2; /* Da bi se tekst širio koliko treba  */ 
+    
+    
+ }
+
+ .containermars2{
+
+    display: flex; /* Postavljanje na fleksibilni kontejner */
+
+    align-items: center;
+}
+
+.landscapemars img{
+    flex: 1;
+    text-align: left;
+    height: 15cm;
+    width: 9cm;
+left: 400px;
+
+}
+
+.textmars2{
+    text-align: right;
+    flex: 2; /* Da bi se tekst širio koliko treba  */ 
+
+    
+}
+
+
+h2{
+
+    font-weight: bold;
+    color: black;
+    text-align: center;
+font-style: italic;
+}
+
+.jupiternaslov{
+
+color: black;
+text-align: center;
+
+}
+
+.textjupiter{
+
+    text-align: center;
+}
+
+
+.containerjupiter{
+
+    display: flex; /* Postavljanje na fleksibilni kontejner */
+padding: 40px;
+    align-items: center;
+}
+
+.imagejupiter{
+    flex: 1;
+    text-align: left;
+
+}
+.textjupiter{
+    text-align: right;
+    flex: 2; /* Da bi se tekst širio koliko treba  */ 
+ }
+
+
+
+ 
+.containersaturn{
+
+    display: flex; /* Postavljanje na fleksibilni kontejner */
+
+    align-items: center;
+    
+}
+
+
+
+.imagesaturn1 img{
+    
+    text-align: left;
+    padding-left: -50px;
+  
+}
+.textsaturn{
+    text-align: right;
+    flex: 2; /* Da bi se tekst širio koliko treba  */ 
+    border: 2px solid #000; /* Debljina, stil i boja ivica okvira */
+    padding: 20px; /* Unutrašnji prostor oko teksta unutar okvira */
+    width: 300px; /* Širina okvira */
+    
+ } 
+
+
+ 
+
+    .imagesaturn1 img{
+
+        flex: 1;
+        text-align: right;
+        height: 18cm;
+        width: 12cm;
+    
+    }
+
+    
+ .containersaturn1{
+
+    display: flex; /* Postavljanje na fleksibilni kontejner */
+flex: 1;
+    align-items: center;
+}
+
+.imagesaturn img{
+    flex: 1;
+    text-align: left;
+    height: 385px;
+    width: 7cm;
+left: 400px;
+padding: 20px;
+
+}
+
+.textsaturn1{
+    text-align: right;
+    flex: 2; /* Da bi se tekst širio koliko treba  */ 
+   /* Da bi se tekst širio koliko treba  */ 
+    border: 2px solid #000; /* Debljina, stil i boja ivica okvira */
+    padding: 20px; /* Unutrašnji prostor oko teksta unutar okvira */
+    width: 300px; /* Širina okvira */
+    
+    
+}

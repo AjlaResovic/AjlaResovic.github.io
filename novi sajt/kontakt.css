@@ -1,0 +1,307 @@
+body, h2, a {
+    margin: 0;
+    padding: 0;
+    background-image:('C:\Users\Computer\Desktop\novi sajt\slika.jpg');
+    background-color: #352e41;
+    color: #f1eac3;
+}
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background-color: #f0f0f0; */
+}
+
+#title {
+    text-align: center;
+}
+
+.active-link {
+    background-color: #333;
+    color: #fff;
+}
+
+#en {
+    background-color: #0d4fd3;
+    color: rgb(64, 152, 158);
+}
+
+#sr {
+    background-color: rgb(121, 121, 212);
+    color: rgb(117, 9, 9);
+}
+
+.jezik {
+    margin-left: 0px;
+    color: #04070d;
+    text-align: center;
+    background-color: #04070d;
+    border: none;
+    padding: 3px 3px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logo img {
+    top: 20px;
+    float: left;
+    width: 130px;
+    height: 120px;
+}
+
+.logo h1 {
+    color: #fcfced;
+    padding-bottom: 30px;
+    position: relative;
+    top: 20px;
+    left: -25px;
+    padding-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fcfced;
+}
+
+header {
+    background-color: #352e41;
+    color: #f1eac3;
+    text-align: left;
+    padding: -5px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 0cm;
+    margin-left: 3cm;
+    font-style: italic;
+}
+
+nav ul {
+    margin-right: 20px;
+    margin-left: 20px;
+    list-style: none;
+    background-color: #04070d;
+    text-align: center;
+    padding: 18px;
+}
+
+.menulist {
+    word-spacing: 20px;
+    letter-spacing: 2px;
+    color: #fcfced;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fcfced;
+    font-weight: bolder;
+    text-decoration-line: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    border: 6px solid #352e41;
+    border-radius: 20px;
+    margin: 5px;
+    word-spacing: 2px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fcfced;
+    text-align: center;
+    padding: 10px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.image2 {
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 140px;
+}
+
+.image2 img {
+    position: relative;
+    height: 10cm;
+    width: 16cm;
+    right: 235px;
+}
+
+.image-text {
+    text-align: center;
+    position: relative;
+    bottom: 300px;
+    left: 20px;
+    color: #fcfced;
+    padding: 5px 10px;
+    font-size: 45px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+#reg {
+    text-align: center;
+    position: relative;
+    right: 48px;
+    color: #fcfced;
+    padding: 5px 10px;
+    font-size: 22px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+form {
+    max-width: 400px;
+    margin-left: 300px;
+}
+
+form div {
+    padding: 15px 0;
+}
+
+form div label {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+form div input {
+    height: 20px;
+    width: 100px;
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+form div button {
+    padding: 10px 30px;
+    font-size: 18px;
+}
+
+form ul {
+    list-style: none;
+}
+
+form ul li {
+    color: red;
+}
+
+p {
+    font-weight: bold;
+    margin-right: 20px;
+    flex: 1;
+    padding: 20px;
+    text-align: justify;
+    font-size: 12pt;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: #fcfced;
+}
+
+.form-group {
+    color: #fff;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    color: #fcfced;
+    font-weight: bolder;
+    text-decoration-line: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    border-radius: 20px;
+    margin: 5px;
+    word-spacing: 2px;
+}
+
+.dropdown button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #04070d;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #04070d;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+button {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #04070d;
+    color: #fcfced;
+    text-align: center;
+    padding: 20px;
+}
+
+#castro {
+    background-color: #352e41}
