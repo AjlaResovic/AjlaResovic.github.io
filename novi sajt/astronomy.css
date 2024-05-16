@@ -20,9 +20,8 @@ body {
    
 }
 
-.h1 {
-    color: #fcfced;
-}
+
+
 #title{
     text-align: center;
 }
@@ -83,10 +82,12 @@ header {
 
 /* Stilizacija naslova */
 h1 {
+    color:#fcfced;
     font-size: 36px;
     margin-bottom: 0cm;
     margin-left: 3cm;
     font-style: italic;
+    text-align: center;
 }   
 
 .container {
