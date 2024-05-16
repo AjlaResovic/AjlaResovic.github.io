@@ -125,3 +125,185 @@ table td, table th {
 table th {
     background-color: black;
 }
+
+
+/* Stilizacija glavnog menija */
+nav ul {
+
+    margin-right: 20px;
+    margin-left: 20px;
+    list-style: none;
+    background-color: #04070d;
+    text-align: center;
+    padding: 18px;
+    /* word-spacing: 30px; */
+    
+    
+}
+.menulist{
+    word-spacing: 20px;
+    letter-spacing: 2px;
+    color: #fcfced; /* Boja teksta */
+    
+    
+}
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fcfced; /* Boja teksta */
+    
+    font-weight: bolder;
+    text-decoration-line: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    border: 6px solid #352e41;
+    ; /* Debljina i boja ivica kutije */
+    border-radius: 20px; /* Zaobljeni ivici kutije */
+    margin: 5px; /* Razmak između reči u meniju */
+    word-spacing: 2px;
+}
+
+/* Stilizacija sekcija */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+
+/* Stilizacija podnožja */
+footer {
+    background-color: #04070d;
+    color: #fcfced; /* Boja teksta */
+    text-align: center;
+    padding: 10px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+        color: #fcfced; /* Boja teksta */
+    
+    font-weight: bolder;
+    text-decoration-line: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    
+
+    ; /* Debljina i boja ivica kutije */
+    border-radius: 20px; /* Zaobljeni ivici kutije */
+    margin: 5px; /* Razmak između reči u meniju */
+    word-spacing: 2px;
+}
+
+
+.dropdown button {
+
+    
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #04070d;
+    min-width: 160px;
+    z-index: 1;
+}
+
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.dropdown-content a:hover {
+    background-color: #04070d;
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}   
+
+
+
+
+
+/* Osnovni stil za container div */
+.container {
+    display: flex; /* Postavljanje na fleksibilni kontejner */
+    flex: 1;
+    align-items: center; /* Poravnavanje vertikalno */
+   
+}
+
+  
+  .text {
+     flex: 1; /* Da bi se tekst širio koliko treba  */ 
+  }
+  
+
+/* Stil za paragraf (tekst) */
+p{
+       
+    font-weight: bold; /* Debljina fonta */
+    margin-right: 20px; /* Razmak sa desne strane slike */
+    flex: 1; /* Tekst će zauzeti polovinu dostupnog prostora */
+    padding: 20px;
+    text-align: justify;
+    font-size: 12pt;
+    line-height: 1.5; /* Razmak između redova */
+    margin-bottom: 10px; /* Razmak ispod svakog pasusa */
+    color: #fcfced; /* Boja teksta */
+
+}
+i{
+
+    font-style: italic;
+    font-weight: bold;
+}
+
+.container1{
+
+    display: flex; /* Postavljanje na fleksibilni kontejner */
+
+    align-items: center;
+}
+
+.image1{
+    flex: 1;
+    text-align: left;
+
+}
+.text1 {
+    text-align: right;
+    flex: 2; /* Da bi se tekst širio koliko treba  */ 
+ }
+
+ .image2{
+    text-align: right;
+ }
+ .image2 img{
+    text-align: right;
+    opacity: 70%;
+ }
+
+
+ 
+
+
+ 
