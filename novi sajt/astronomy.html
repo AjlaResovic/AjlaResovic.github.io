@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data for Multiple Countries</title>
+    <link rel="stylesheet" href="astronomy.css">
+    
+</head>
+<body>
+    <header>
+        <h1>Date information for sunrise, sunset, moonrise, moonset, moon phase</h1>
+    </header>
+
+    <div class="container" id="cardsContainer">
+        <!-- Kartice će se dinamički generirati ovdje -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!-- Added Axios library -->
+    <script>
+        // Funkcija za dohvat podataka o vremenu
+        async function fetchData(country) {
+            const options = {
+                method: 'GET',
+                url: 'https://weatherapi-com.p.rapidapi.com/astronomy.json',
+                params: { q: country },
+                headers: {
+                    'X-RapidAPI-Key': 'd56a96f3a8msh04e2ab4c23f9024p19f827jsn8999c7667706',
+                    'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await axios.request(options);
+                return response.data;
+            } catch (error) {
+                console.error(error);
+                return null;
+            }
+        }
+
+        // Funkcija za generiranje kartica za svaku zemlju
+        async function generateCards() {
+            const countries = ['Berlin', 'Paris', 'London']; // Ovdje možete dodati više zemalja po potrebi
+            const cardsContainer = document.getElementById('cardsContainer');
+
+            for (let i = 0; i < countries.length; i++) {
+                const data = await fetchData(countries[i]);
+
+                if (data) {
+                    const cardHTML = `
+                        <div class="card">
+                            <h2>Location</h2>
+                            <table>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Value</th>
+                                </tr>
+                                <tr>
+                                    <td>Name</td>
+                                    <td id="locationName_${i}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Region</td>
+                                    <td id="locationRegion_${i}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Country</td>
+                                    <td id="locationCountry_${i}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Latitude</td>
+                                    <td id="locationLatitude_${i}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Longitude</td>
+                                    <td id="locationLongitude_${i}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Timezone</td>
+                                    <td id="locationTimezone_${i}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Local Time</td>
+                                    <td id="locationLocaltime_${i}"></td>
+                                </tr>
+                            </table>
+                            <h2>Astronomy Data</h2>
+                            <table>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Value</th>
+                                </tr>
+                                <tr>
+                                    <td>Sunrise</td>
+                                    <td id="sunrise_${i}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Sunset</td>
+                                    <td id="sunset_${i}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Moonrise</td>
+                                    <td id="moonrise_${i}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Moonset</td>
+                                    <td id="moonset_${i}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Moon Phase</td>
+                                    <td id="moonPhase_${i}"></td>
+                                </tr>
+                                <tr>
+                                    <td>Moon Illumination</td>
+                                    <td id="moonIllumination_${i}"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    `;
+                    cardsContainer.innerHTML += cardHTML;
+
+                    // Popunjavanje podataka za trenutnu karticu
+                    document.getElementById(`locationName_${i}`).innerText = data.location.name;
+                    document.getElementById(`locationRegion_${i}`).innerText = data.location.region;
+                    document.getElementById(`locationCountry_${i}`).innerText = data.location.country;
+                    document.getElementById(`locationLatitude_${i}`).innerText = data.location.lat;
+                    document.getElementById(`locationLongitude_${i}`).innerText = data.location.lon;
+                    document.getElementById(`locationTimezone_${i}`).innerText = data.location.tz_id;
+                    document.getElementById(`locationLocaltime_${i}`).innerText = data.location.localtime;
+
+                    document.getElementById(`sunrise_${i}`).innerText = data.astronomy.astro.sunrise;
+                    document.getElementById(`sunset_${i}`).innerText = data.astronomy.astro.sunset;
+                    document.getElementById(`moonrise_${i}`).innerText = data.astronomy.astro.moonrise;
+                    document.getElementById(`moonset_${i}`).innerText = data.astronomy.astro.moonset;
+                    document.getElementById(`moonPhase_${i}`).innerText = data.astronomy.astro.moon_phase;
+                    document.getElementById(`moonIllumination_${i}`).innerText = `${data.astronomy.astro.moon_illumination}%`;
+                }
+            }
+        }
+
+        // Pozivanje funkcije za generiranje kartica
+        generateCards();
+    </script>
+</body>
+</html>
