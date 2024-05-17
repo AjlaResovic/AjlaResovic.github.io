@@ -40,7 +40,8 @@
         </div> 
             <li><a data-translate="onama" href="onama.html">O NAMA</a></li>
             <li><a data-translate="kontakt" href="Kontakt.html">KONTAKT</a></li>
-	  <li><a data-translate="astronomy" href="astronomy.html">ASTRONOMY</a></li>
+	  <li><a data-translate="astronomy" href="astronomy.html">FAZE SUNCA I MESECA</a></li>
+      
 
         </ul>
     </nav>
@@ -53,29 +54,29 @@
    <body>
          
 	<form>
-		<h1 id="reg">Registracija korisnika</h1>
+		<h1 data-translate="registration">Registracija korisnika</h1>
 		<div>
-			<label for="ime_prezime">Ime i prezime:</label>
-			<input id="ime_prezime" type="text" name="ime_prezime" placeholder="Unesite Svoje Ime I Prezime">
+			<label data-translate="Name">Ime</label>
+			<input id="ime"   data-translate="ime" type="text" name="ime" placeholder="Unesite Svoje ime">
 		</div>
 		<div>
-			<label for="korisnicko_ime">Korisničko ime:</label>
-			<input id="korisnicko_ime" type="text" name="korisnicko_ime" placeholder="Unesite Korisnicko Ime">
+			<label data-translate="surname">Prezime</label>
+			<input id="prezime" data-translate="prezime" type="text" name="prezime" placeholder="Unesite svoje prezime">
 		</div>
 		<div>
-			<label for="email">Email adresa:</label>
-			<input id="email" type="text" name="email" placeholder="Unesite Vasu Email Adresu">
+			<label data-translate="email">Email adresa:</label>
+			<input id="email1" data-translate="email1" type="text" name="email1" placeholder="Unesite Vasu Email Adresu">
 		</div>
 		<div>
-			<label for="lozinka">Lozinka:</label>
-			<input id="lozinka" type="text" name="lozinka" placeholder="Unesite Vasu Lozinku">
+			<label data-translate="password">Lozinka:</label>
+			<input id="lozinka" data-translate="lozinka" type="text" name="lozinka" placeholder="Unesite Vasu Lozinku">
 		</div>
 		<div>
-			<label for="ponovi_lozinku">Ponovi lozinku:</label>
-			<input id="ponovi_lozinku" type="text" name="ponovi_lozinku" placeholder="Potvrdite Vasu Lozinku">
+			<label data-translate="confirmPassword">Ponovi lozinku:</label>
+			<input id="ponovilozinku" data-translate="ponovilozinku" type="text" name="ponovilozinku" placeholder="Potvrdite Vasu Lozinku">
 		</div>
 		<div>
-			<button>Registruj se</button>
+			<button type="submit"  data-translate="registerButton">Registruj se</button>
 		</div>
 	</form>
 
@@ -83,16 +84,209 @@
 </body>
    </div>
    </main>
+   <button id="changeLanguageButton">EN</button> <!-- Dodato dugme za promenu jezika -->
+
+   <script>  // Dohvatanje dugmeta za promenu jezika
+    const changeLanguageButton = document.getElementById('changeLanguageButton');
+    
+    // Postavljanje početnog jezika na engleski
+    let currentLanguage = 'en';
+    
+    // Dodavanje slušača događaja za klik na dugme
+    changeLanguageButton.addEventListener('click', function() {
+        // Ako je trenutni jezik engleski, promeni ga na srpski
+        if (currentLanguage === 'en') {
+            currentLanguage = 'sr';
+            changeLanguageButton.innerText = 'SR';
+            translatePageToSerbian();
+        } else { // Inače, promeni jezik na engleski
+            currentLanguage = 'en';
+            changeLanguageButton.innerText = 'EN';
+            translatePageToEnglish();
+        }
+    });
+    
+    // Funkcija za prevođenje stranice na srpski jezik
+    function translatePageToSerbian() {
+        const elementsToTranslate = document.querySelectorAll('[data-translate]');
+    
+        elementsToTranslate.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            switch (key) {
+                case 'pocetna':
+                    element.innerText = 'POČETNA';
+                    break;
+                case 'istorija':
+                    element.innerText = 'ISTORIJA';
+                    break;
+                case 'zanimljivosti':
+                    element.innerText = 'ZANIMLJIVOSTI';
+                    break;
+                case 'tplanete':
+                    element.innerText = 'Terestičke planete';
+                    break;
+                case 'trio':
+                    element.innerText = 'Planetarni trio';
+                    break;
+                case 'divovi':
+                    element.innerText = 'Ledeni divovi i crne rupe';
+                    break;
+                case 'onama':
+                    element.innerText = 'O NAMA';
+                    break;
+                case 'kontakt':
+                    element.innerText = 'KONTAKT';
+                    break;
+                case 'astronomy':
+                    element.innerText = 'FAZE SUNCA I MESECA';
+                    break;
+                case 'meteorite':
+                    element.innerText = 'Meteoriti';
+                    break;
+                    case 'istrazuj':
+                element.innerText = 'Istražujte sa nama!';
+                break;
+            case 'registration':
+                element.innerText = 'Registracija korisnika';
+                break;
+            case 'Name':
+                element.innerText = 'Ime';
+                break;
+            case 'surname':
+                element.innerText = 'Prezime';
+                break;
+            case 'email':
+                element.innerText = 'Email adresa';
+                break;
+            case 'password':
+                element.innerText = 'Lozinka';
+                break;
+            case 'confirmPassword':
+                element.innerText = 'Potvrdi lozinku';
+                break;
+            case 'registerButton':
+                element.innerText = 'Registruj se';
+                break; 
+                case 'ime':
+                document.getElementById('ime').placeholder = 'Unesite svoje ime';
+                break;
+            case 'prezime':
+                document.getElementById('prezime').placeholder = 'Unesite svoje prezime';
+                break;
+            case 'email1':
+                document.getElementById('email1').placeholder = 'Unesite Vašu email adresu';
+                break;
+            case 'lozinka':
+                document.getElementById('lozinka').placeholder = 'Unesite Vašu lozinku';
+                break;
+            case 'ponovilozinku':
+                document.getElementById('ponovilozinku').placeholder = 'Potvrdite Vašu lozinku';
+                break;
+                default:
+                break;
+                    
+            }
+        });
+    }
+    
+    // Funkcija za prevođenje stranice na engleski jezik
+    function translatePageToEnglish() {
+        const elementsToTranslate = document.querySelectorAll('[data-translate]');
+    
+        elementsToTranslate.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            switch (key) {
+                case 'pocetna':
+                    element.innerText = 'HOME';
+                    break;
+                case 'istorija':
+                    element.innerText = 'HISTORY';
+                    break;
+                case 'zanimljivosti':
+                    element.innerText = 'INTERESTING FACTS';
+                    break;
+                case 'tplanete':
+                    element.innerText = 'Terrestrial Planets';
+                    break;
+                case 'trio':
+                    element.innerText = 'Planetary Trio';
+                    break;
+                case 'divovi':
+                    element.innerText = 'Ice Giants and Black Holes';
+                    break;
+                case 'onama':
+                    element.innerText = 'ABOUT US';
+                    break;
+                case 'kontakt':
+                    element.innerText = 'CONTACT';
+                    break;
+                case 'astronomy':
+                    element.innerText = 'PHASES OF THE SUN AND MOON';
+                    break;
+                case 'meteorite':
+                    element.innerText = 'Meteorites';
+                    break;
+                    case 'istrazuj':
+                element.innerText = 'Explore with us!';
+                break;
+            case 'registration':
+                element.innerText = 'User Registration';
+                break;
+            case 'Name':
+                element.innerText = 'Name';
+                break;
+            case 'surname':
+                element.innerText = 'Surname';
+                break;
+            case 'email':
+                element.innerText = 'Email Address';
+                break;
+            case 'password':
+                element.innerText = 'Password';
+                break;
+            case 'confirmPassword':
+                element.innerText = 'Confirm Password';
+                break;
+            case 'registerButton':
+                element.innerText = 'Register';
+                break;
+                case 'ime':
+                document.getElementById('ime').placeholder = 'Enter your name';
+                break;
+            case 'prezime':
+                document.getElementById('prezime').placeholder = 'Enter your surname';
+                break;
+            case 'email1':
+                document.getElementById('email1').placeholder = 'Enter your email address';
+                break;
+            case 'lozinka':
+                document.getElementById('lozinka').placeholder = 'Enter your password';
+                break;
+            case 'ponovilozinku':
+                document.getElementById('ponovilozinku').placeholder = 'Confirm your password';
+                break;
+            default:
+                break;
+            }
+        });
+    }
+    
+        </script>
+        
+    </body>
+    
+    
+    
+    
+    </html>
+    </script>
+
+
+
+
     <footer>
         <p id="castro">&copy; 2023 Astromath</p> 
-
-              <div class="jezik">
-            <select id="languageSelect">
-                <option id="en" value="en">English</option>
-                <option id="sr" value="sr">Srpski</option>
-            </select>
-    
-    </div>
     </footer>
-    <script src="kontakt.js"></script>
+        <script src="kontakt.js"></script>
+             
 </html>
