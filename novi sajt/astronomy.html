@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Data for Multiple Countries</title>
     <link rel="stylesheet" href="astronomy.css">
-    
+    <script src="astronomy.js"></script>    
 </head>
 <body>
     <header>
@@ -23,28 +23,44 @@
         <ul class="menulist">
             <li><a data-translate="pocetna" href="pocetna.html">POČETNA</a></li>
             <li><a data-translate="istorija" href="istorija.html">ISTORIJA</a></li>
-            <div class="dropdown"
-            <button><li><a  data-translate="zanimljivosti" href="#">ZANIMLJIVOSTi</a></li></button>
-            <div class="dropdown-content">
-                <a data-translate="tplanete" href="zanimljivosti.html">Terestičke planete</a>
-                <a data-translate="trio" href="zanimljivosti2.html">Planetarni trio</a>
-                <a data-translate="divovi"  href="zanimljivosti3.html">Ledeni divovi i crne rupe</a>
-            </div>
-        </div> 
+            <li class="dropdown">
+                <a  data-translate="zanimljivosti" href="#">ZANIMLJIVOSTI</a>
+                <div class="dropdown-content">
+                    <a data-translate="tplanete" href="zanimljivosti.html">Terestičke planete</a>
+                    <a data-translate="trio" href="zanimljivosti2.html">Planetarni trio</a>
+                    <a data-translate="divovi"  href="zanimljivosti3.html">Ledeni divovi i crne rupe</a>
+                </div>
+            </li>
             <li><a data-translate="onama" href="onama.html">O NAMA</a></li>
             <li><a data-translate="kontakt" href="Kontakt.html">KONTAKT</a></li>
-            <li><a data-translate="astronomy" href="astronomy.html">ASTRONOMY</a></li>
+            <li><a data-translate="astronomy" href="astronomy.html">FAZE SUNCA I MESECA</a></li>
+
         </ul>
         
     </nav>
      <header>
-        <h1>Date information for sunrise, sunset, moonrise, moonset, moon phase</h1>
+        <h2 data-translate="infor">Vremenske informacije: Sunčeve i Mjesečeve pojave za odabrane gradove
+           </h2>
     </header>
+
+    <p data-translate="suncemesec"> Ovdje možete pronaći važne podatke o Sunčevim i
+         Mjesečevim pojavama za gradove poput Berlina, Frankfurta, Londona, Pekinga i Istanbula.
+          Pratimo izlazak i zalazak Sunca, kao i izlazak i zalazak Mjeseca, zajedno s trenutnom fazom
+           Mjeseca za svaki od ovih gradova. Bez obzira jeste li turist koji istražuje nova mjesta ili 
+           lokalni stanovnik koji planira aktivnosti, ove informacije su korisne za planiranje vašeg
+            dana. Budite u tijeku s prirodnim fenomenima i iskoristite ih najbolje što možete!
+
+
+
+
+        </P>
 
     <div class="container" id="cardsContainer">
         <!-- Kartice će se dinamički generirati ovdje -->
     </div>
-
+    <button id="changeLanguageButton">EN</button> <!-- Dodato dugme za promenu jezika -->
+    
+    <script src="novi sajt\astronomy.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> <!-- Added Axios library -->
     <script>
         // Funkcija za dohvat podataka o vremenu
@@ -170,6 +186,132 @@
 
         // Pozivanje funkcije za generiranje kartica
         generateCards();
-    </script>
+        // Dohvatanje dugmeta za promenu jezika
+const changeLanguageButton = document.getElementById('changeLanguageButton');
+
+// Postavljanje početnog jezika na engleski
+let currentLanguage = 'en';
+
+// Dodavanje slušača događaja za klik na dugme
+changeLanguageButton.addEventListener('click', function() {
+    // Ako je trenutni jezik engleski, promeni ga na srpski
+    if (currentLanguage === 'en') {
+        currentLanguage = 'sr';
+        changeLanguageButton.innerText = 'SR';
+        translatePageToSerbian();
+    } else { // Inače, promeni jezik na engleski
+        currentLanguage = 'en';
+        changeLanguageButton.innerText = 'EN';
+        translatePageToEnglish();
+    }
+});
+
+// Funkcija za prevođenje stranice na srpski jezik
+function translatePageToSerbian() {
+    const elementsToTranslate = document.querySelectorAll('[data-translate]');
+
+    elementsToTranslate.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        switch (key) {
+            case 'pocetna':
+                element.innerText = 'POČETNA';
+                break;
+            case 'istorija':
+                element.innerText = 'ISTORIJA';
+                break;
+            case 'zanimljivosti':
+                element.innerText = 'ZANIMLJIVOSTI';
+                break;
+            case 'tplanete':
+                element.innerText = 'Terestičke planete';
+                break;
+            case 'trio':
+                element.innerText = 'Planetarni trio';
+                break;
+            case 'divovi':
+                element.innerText = 'Ledeni divovi i crne rupe';
+                break;
+            case 'onama':
+                element.innerText = 'O NAMA';
+                break;
+            case 'kontakt':
+                element.innerText = 'KONTAKT';
+                break;
+            case 'astronomy':
+                element.innerText = 'FAZE SUNCA I MESECA';
+                break;
+            case 'meteorite':
+                element.innerText = 'Meteoriti';
+                break;
+                case 'infor':
+                    element.innerText = 'Vremenske informacije: Sunčeve i Mjesečeve pojave za odabrane gradove';
+                    break;
+                    case 'suncemesec':
+                        element.innerText='Ovde možete pronaći važne podatke o Sunčevim i Mesečevim pojavama za gradove poput Berlina, Frankfurta, Londona, Pekinga i Istanbula. Pratimo izlazak i zalazak Sunca, kao i izlazak i zalazak Meseca, zajedno s trenutnom fazom Meseca za svaki od ovih gradova. Bez obzira jeste li turista koji istražuje nova mesta ili lokalni stanovnik koji planira aktivnosti, ove informacije su korisne za planiranje vašeg dana. Budite u toku s prirodnim fenomenima i iskoristite ih najbolje što možete!"';
+                        break;
+            default:
+                break;
+        }
+    });
+}
+
+// Funkcija za prevođenje stranice na engleski jezik
+function translatePageToEnglish() {
+    const elementsToTranslate = document.querySelectorAll('[data-translate]');
+
+    elementsToTranslate.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        switch (key) {
+            case 'pocetna':
+                element.innerText = 'HOME';
+                break;
+            case 'istorija':
+                element.innerText = 'HISTORY';
+                break;
+            case 'zanimljivosti':
+                element.innerText = 'INTERESTING FACTS';
+                break;
+            case 'tplanete':
+                element.innerText = 'Terrestrial Planets';
+                break;
+            case 'trio':
+                element.innerText = 'Planetary Trio';
+                break;
+            case 'divovi':
+                element.innerText = 'Ice Giants and Black Holes';
+                break;
+            case 'onama':
+                element.innerText = 'ABOUT US';
+                break;
+            case 'kontakt':
+                element.innerText = 'CONTACT';
+                break;
+            case 'astronomy':
+                element.innerText = 'PHASES OF THE SUN AND MOON';
+                break;
+            case 'meteorite':
+                element.innerText = 'Meteorites';
+                break;
+                case 'infor':
+                element.innerText = 'Weather Information: Sun and Moon Events for selected cities';
+                break;
+            case 'suncemesec':
+                element.innerText = 'Here you can find important data regarding the sun and moon events  for cities such as Berlin, Frankfurt, London, Beijing, and Istanbul.We track the sunrise and sunset times, as well as moonrise, moonset,  and the current moon phase for each of these cities.  Whether youre a tourist exploring new places or a local resident planning activities,this information is valuable for organizing your day. Stay updated with natural phenomena and make the most of them!'
+                break;
+            
+            default:
+                break;
+        }
+    });
+}
+
+</script>    
 </body>
+
+     <footer>
+        <p id="castro">&copy; 2023 Astromath</p> 
+    </footer>
+
+
+
 </html>
