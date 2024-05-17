@@ -189,7 +189,7 @@ a:hover {
 .dropdown button {
 
     
-    background-color: #4CAF50;
+    background-color: #04070d;
     color: white;
     padding: 10px;
     border: none;
@@ -326,3 +326,27 @@ p a img {
     text-align: center;
     vertical-align: middle;
 }
+
+ 
+#changeLanguageButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #04070d;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#changeLanguageButton:hover {
+    background-color:   #04070d;
+}
+
+
+
+
+
+ 
