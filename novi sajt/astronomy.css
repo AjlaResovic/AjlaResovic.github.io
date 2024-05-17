@@ -4,7 +4,7 @@ body,p,  h2, a {
     padding: 0;
     background-image:('C:\Users\Computer\Desktop\novi sajt\slika.jpg');
     background-color: #352e41;
-
+text-align: center;
     color: #f1eac3;
     align-items: center;
     
@@ -25,24 +25,8 @@ body {
 #title{
     text-align: center;
 }
-#en{
-    background-color: #04070d;
-    color: white;
-}
-#sr{
-    background-color:blue ;
-    color: red;
-}
-.jezik{
-    margin-left: 0px;
-    color: #04070d;
-    text-align: center;
-    background-color: #04070d;
-    border: none;
-    padding: 3px 3px;
-    border-radius: 5px; 
-    cursor: pointer;
-}
+
+
 .logo img {
     top: 20px;
     float: left;
@@ -306,6 +290,23 @@ i{
     text-align: right;
     opacity: 70%;
  }
+ 
+ #changeLanguageButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #04070d;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#changeLanguageButton:hover {
+    background-color:   #04070d;
+}
 
 
  
