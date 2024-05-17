@@ -23,8 +23,8 @@
         <ul class="menulist">
             <li><a data-translate="pocetna" href="pocetna.html">POČETNA</a></li>
             <li><a data-translate="istorija" href="istorija.html">ISTORIJA</a></li>
-            <div class="dropdown"
-            <button><li><a  data-translate="zanimljivosti" href="#">ZANIMLJIVOSTi</a></li></button>
+            <div class="dropdown">
+            <button><li><a  data-translate="zanimljivosti" href="#">ZANIMLJIVOSTI</a></li></button>
             <div class="dropdown-content">
                 <a data-translate="tplanete" href="zanimljivosti.html">Terestičke planete</a>
                 <a data-translate="trio" href="zanimljivosti2.html">Planetarni trio</a>
@@ -33,7 +33,8 @@
         </div> 
             <li><a data-translate="onama" href="onama.html">O NAMA</a></li>
             <li><a data-translate="kontakt" href="Kontakt.html">KONTAKT</a></li>
-           <li><a data-translate="astronomy" href="astronomy.html">ASTRONOMY</a></li>
+           <li><a data-translate="astronomy" href="astronomy.html">FAZE SUNCA I MESECA</a></li>
+          
 
         </ul>
     </nav>
@@ -104,15 +105,224 @@
     </section>
       
     </main>
-    <footer>
-        <p>&copy; 2023 Astromath</p>
-          <div class="jezik">
-        <select id="languageSelect">
-            <option id="en" value="en">English</option>
-            <option id="sr" value="sr">Srpski</option>
-        </select>
-        </div>
-    </footer>
-    <script src="pocetna.js">                          </script>
+    <button id="changeLanguageButton">EN</button> <!-- Dodato dugme za promenu jezika -->      
+    <script>
+
+    // Dohvatanje dugmeta za promenu jezika
+    const changeLanguageButton = document.getElementById('changeLanguageButton');
+    
+    // Postavljanje početnog jezika na engleski
+    let currentLanguage = 'en';
+    
+    // Dodavanje slušača događaja za klik na dugme
+    changeLanguageButton.addEventListener('click', function() {
+        // Ako je trenutni jezik engleski, promeni ga na srpski
+        if (currentLanguage === 'en') {
+            currentLanguage = 'sr';
+            changeLanguageButton.innerText = 'SR';
+            translatePageToSerbian();
+        } else { // Inače, promeni jezik na engleski
+            currentLanguage = 'en';
+            changeLanguageButton.innerText = 'EN';
+            translatePageToEnglish();
+        }
+    });
+    
+    // Funkcija za prevođenje stranice na srpski jezik
+    function translatePageToSerbian() {
+        const elementsToTranslate = document.querySelectorAll('[data-translate]');
+    
+        elementsToTranslate.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            switch (key) {
+                case 'pocetna':
+                    element.innerText = 'POČETNA';
+                    break;
+                case 'istorija':
+                    element.innerText = 'ISTORIJA';
+                    break;
+                case 'zanimljivosti':
+                    element.innerText = 'ZANIMLJIVOSTI';
+                    break;
+                case 'tplanete':
+                    element.innerText = 'Terestičke planete';
+                    break;
+                case 'trio':
+                    element.innerText = 'Planetarni trio';
+                    break;
+                case 'divovi':
+                    element.innerText = 'Ledeni divovi i crne rupe';
+                    break;
+                case 'onama':
+                    element.innerText = 'O NAMA';
+                    break;
+                case 'kontakt':
+                    element.innerText = 'KONTAKT';
+                    break;
+                case 'astronomy':
+                    element.innerText = 'FAZE SUNCA I MESECA';
+                    break;
+                case 'meteorite':
+                    element.innerText = 'Meteoriti';
+                    break;
+                   
+    case 'welcome':
+        element.innerText = "Dobrodošli u Astromath, vašu jedinstvenu destinaciju za istraživanje čudesnog spoja matematike i astronomije! Naša stranica je posvećena širenju znanja i razumevanju o tome kako matematika igra ključnu ulogu u istraživanju nebeskih tela i razumevanju kosmosa.";
+        break;
+    case 'whyMath':
+        element.innerText= "Zašto je matematika važna u astronomiji?";
+        break;
+    case 'oldest':
+        element.innerText="Astronomija je jedna od najstarijih nauka i često se naziva najstarijom od svih nauka. Ali šta je to što omogućava astronomima da proučavaju zvezde, planete, galaksije i crne rupe? Odgovor je matematika! Matematika je jezik kosmosa, a mi vam ovde pružamo ključ za dešifrovanje tog jezika.";
+        break;
+    case  'nauciti': 
+        element.innerText="Šta možete naučiti ovde?";
+        break;
+    case 'osnove':
+        element.innerText="Osnove Astronomske Matematike: Naučite osnovne matematičke koncepte koji su od suštinskog značaja za razumevanje astronomije, uključujući trigonometriju, geometriju i algebru. Simulacije i Modeliranje: Upoznajte se sa sofisticiranim matematičkim modelima i simulacijama koje astronomi koriste kako bi istraživali kosmos, predviđali pomračenja, orbite planeta i još mnogo toga. Astronomske Formula: Pregledajte ključne astronomske formule koje vam omogućavaju da izračunate razdaljine, brzine i karakteristike nebeskih tela.";
+        break;
+    case 'istraživanje':
+        element.innerText="Istraživanje Svemira: Dublje se udubite u svet astronomije kroz informativne članke, video materijale i interaktivne zadatke koji će vam pomoći da sami istražujete svemir. Aktuelnosti u Astronomiji: Pratite najnovije vesti i otkrića u svetu astronomije uz pomoć naših redovno ažuriranih članaka i vesti.";
+        break;
+    case 'namena':
+        element.innerText="Svemirski Matematički Vodič je namenjen svima, bez obzira na nivo matematičkog znanja. Bez obzira da li ste učenik, student, zaljubljenik u astronomiju ili samo radoznali pojedinac, pronaći ćete korisne informacije i resurse koji će vam pomoći da proširite svoje razumevanje matematike i astronomije. Zaronite s nama u fascinantan svet matematike u astronomiji, gde ćete otkriti da su brojevi ključ za razumevanje beskrajnih prostranstava kosmosa. Pružamo vam alate da otkrijete kosmičke tajne i da se pridružite istraživačima neba u njihovim avanturama. Dođite i postanite deo naše zajednice zaljubljenika u svemirsku matematiku. Zajedno ćemo osvetliti put kroz kosmički lavirint!";
+        break;
+    case 'pocetna':
+        element.innerText="POČETNA";
+        break;
+    case 'istorija':
+        element.innerText="ISTORIJA";
+        break;
+    case 'zanimljivosti':
+        element.innerText="ZANIMLJIVOSTI";
+        break;
+    case 'onama':
+        element.innerText="O NAMA";
+        break;
+    case 'kontakt':
+        element.innerText="KONTAKT";
+        break;
+    case 'tplanete':
+        element.innerText="Teresticke planete";
+        break;
+    case 'trio':
+        element.innerText="Planetarni trio";
+        break;
+    case 'divovi':
+        element.innerText="Ledeni divovi i crne rupe";
+        break;
+    default:
+        break;
+
+
+                   
+        
+                    
+                }
+            });
+        }
+    
+    // Funkcija za prevođenje stranice na engleski jezik
+    function translatePageToEnglish() {
+        const elementsToTranslate = document.querySelectorAll('[data-translate]');
+    
+        elementsToTranslate.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            switch (key) {
+                case 'pocetna':
+                    element.innerText = 'HOME';
+                    break;
+                case 'istorija':
+                    element.innerText = 'HISTORY';
+                    break;
+                case 'zanimljivosti':
+                    element.innerText = 'INTERESTING FACTS';
+                    break;
+                case 'tplanete':
+                    element.innerText = 'Terrestrial Planets';
+                    break;
+                case 'trio':
+                    element.innerText = 'Planetary Trio';
+                    break;
+                case 'divovi':
+                    element.innerText = 'Ice Giants and Black Holes';
+                    break;
+                case 'onama':
+                    element.innerText = 'ABOUT US';
+                    break;
+                case 'kontakt':
+                    element.innerText = 'CONTACT';
+                    break;
+                case 'astronomy':
+                    element.innerText = 'PHASES OF THE SUN AND MOON';
+                    break;
+                case 'meteorite':
+                    element.innerText = 'Meteorites';
+                    break;
+                    case 'welcome': 
+                    element.innerText="Welcome to Astromath, your unique destination for exploring the marvelous blend of mathematics and astronomy!Our site is dedicated to spreading knowledge and understanding about how mathematics plays a key role in the exploration of celestial bodies and the understanding of the cosmos.";
+           break;
+           case 'whyMath':
+            element.innerText= "Why is mathematics important in astronomy?";
+            break;
+            case 'oldest':
+                element.innerText="Astronomy is one of the oldest sciences and is often called the oldest of all sciences. But what is it that allows astronomers to study stars, planets, galaxies and black holes? The answer is math! Mathematics is the language of the cosmos, and here we provide you with the key to deciphering that language.";
+           break;
+           case  'nauciti': 
+           element.innerText="What can you learn here?";
+            break;
+            case 'osnove':
+                element.innerText="Basic Astronomical Mathematics: Learn fundamental mathematical concepts that are essential for understanding astronomy, including trigonometry, geometry, and algebra. Simulations and Modeling: Familiarize yourself with sophisticated mathematical models and simulations that astronomers use to explore the cosmos, predict eclipses, planetary orbits, and much more.Astronomical Formulas: Review key astronomical formulas that enable you to calculate distances, velocities, and characteristics of celestial bodies.";
+           break;
+           case 'istrazivanje':
+            element.innerText="Explore the Universe: Dive Deeper into the World of Astronomy with informative articles, video materials, and interactive tasks that will help you explore the cosmos on your own.Astronomy News: Stay updated on the latest news and discoveries in the world of astronomy with our regularly updated articles and news.";
+            break;
+            case 'namena':
+                element.innerText="The Cosmic Mathematical Guide is intended for everyone, regardless of their level of mathematical knowledge. Whether you are a student, a college student, an astronomy enthusiast, or just a curious individual, you will find useful information and resources that will help you expand your understanding of mathematics and astronomy. Dive with us into the fascinating world of mathematics in astronomy, where you will discover that numbers are the key to understanding the endless expanses of the cosmos. We provide you with tools to uncover cosmic secrets and to join sky explorers in their adventures. Come and become a part of our community of space mathematics enthusiasts. Together, we will illuminate the path through the cosmic labyrinth! ";
+            break;
+            case 'pocetna':
+                element.innerText="HOME";
+                break;
+            case 'istorija':
+                element.innerText="HISTORY";
+                break;
+            case 'zanimljivosti':
+                element.innerText="INTERESTING FACTS";
+           break;
+           case 'onama':
+            element.innerText="ABOUT US";
+            break;
+            case 'kontakt':
+                element.innerText="CONTACT";
+                break;
+            case 'tplanete':
+                element.innerText="Terrestial planets";
+                break;
+           case  'trio':
+            element.innerText="Planetary trio";
+        break;
+            case 'divovi':
+                element.innerText="Ice giants and black holes";
+                break;
+                
+                default:
+                    break;
+            }
+        });
+    }
+    
+        </script>
+         <footer>
+            <p id="castro">&copy; 2023 Astromath</p> 
+        </footer>
+    </body>
+    
+    
+    
+    
+    </html>
+    
+
 </body>
-</html
+</html>
+</script>   
